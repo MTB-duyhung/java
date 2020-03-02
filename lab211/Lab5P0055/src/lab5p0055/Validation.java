@@ -56,20 +56,6 @@ public class Validation {
         }
     }
 
-    public static boolean checkInputYN() {
-        while (true) {
-            String result = checkInputString();
-            if (result.equalsIgnoreCase("Y")) {
-                return true;
-            }
-            if (result.equalsIgnoreCase("N")) {
-                return false;
-            }
-            System.err.println("Please input y/Y or n/N.");
-            System.out.print("Enter again: ");
-        }
-    }
-
     public static boolean checkCodeExist(ArrayList<Doctor> ld, String code) {
         for (Doctor doctor : ld) {
             if (code.equalsIgnoreCase(doctor.getCode())) {
@@ -79,20 +65,13 @@ public class Validation {
         return true;
     }
 
-    public static boolean checkDuplicate(ArrayList<Doctor> ld, String code, String name, String specialization, int availability) {
-        for (Doctor doctor : ld) {
-            if (code.equalsIgnoreCase(doctor.getCode())
-                    && name.equalsIgnoreCase(doctor.getName())
-                    && specialization.equalsIgnoreCase(doctor.getSpecialization())
-                    && availability == doctor.getAvailability()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static boolean checkChangeInfo(Doctor doctor, String code, String name, String specialization, int availability) {
-
+        if (code.equalsIgnoreCase(doctor.getCode())
+                && name.equalsIgnoreCase(doctor.getName())
+                && specialization.equalsIgnoreCase(doctor.getSpecialization())
+                && availability == doctor.getAvailability()) {
+            return false;
+        }
         return true;
     }
 }

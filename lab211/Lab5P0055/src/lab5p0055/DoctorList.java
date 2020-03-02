@@ -14,20 +14,20 @@ import java.util.ArrayList;
 public class DoctorList {
 
     public void addDoctor(ArrayList<Doctor> ld) {
-        System.out.println("Enter code: ");
+        System.out.print("Enter code: ");
         String code = Validation.checkInputString();
         if (!Validation.checkCodeExist(ld, code)) {
             System.err.println("Doctor exist.");
             return;
         }
-        System.out.println("Enter Name: ");
+        System.out.print("Enter Name: ");
         String name = Validation.checkInputString();
-        System.out.println("Enter Specialization: ");
+        System.out.print("Enter Specialization: ");
         String specialization = Validation.checkInputString();
-        System.out.println("Enter Availability: ");
+        System.out.print("Enter Availability: ");
         int availability = Validation.checkInputInt();
         ld.add(new Doctor(code, name, specialization, availability));
-        System.err.println("Add successful.");
+        System.err.print("Add successful.");
     }
 
     public void updateDoctor(ArrayList<Doctor> ld) {
@@ -37,8 +37,17 @@ public class DoctorList {
             System.err.println("Not found doctor");
             return;
         }
+        Doctor doctor = getDoctorByCode(ld, code);
+        System.out.println("Update:");
         System.out.print("Enter code: ");
-        if (!Validation.checkChangeInfo(doctor, code, name, specialization, availability)) {
+        String codeUpdate = Validation.checkInputString();
+        System.out.print("Enter Name: ");
+        String name = Validation.checkInputString();
+        System.out.print("Enter Specialization: ");
+        String specialization = Validation.checkInputString();
+        System.out.print("Enter Availability: ");
+        int availability = Validation.checkInputInt();
+        if (!Validation.checkChangeInfo(doctor, codeUpdate, name, specialization, availability)) {
             System.err.println("No change");
             return;
         }
@@ -52,9 +61,12 @@ public class DoctorList {
     public void deleteDoctor(ArrayList<Doctor> ld) {
         System.out.print("Enter code: ");
         String code = Validation.checkInputString();
+        Doctor doctorDelete = getDoctorByCode(ld, code);
         if (Validation.checkCodeExist(ld, code)) {
             System.err.println("Not found doctor");
             return;
+        } else {
+            ld.remove(doctorDelete);
         }
         System.err.println("Delete successful.");
     }
@@ -62,6 +74,14 @@ public class DoctorList {
     public void searchDoctor(ArrayList<Doctor> ld) {
         System.out.print("Enter name: ");
         String nameSearch = Validation.checkInputString();
+        if (listFoundByName(ld, nameSearch).isEmpty()) {
+            System.err.println("Not exist.");
+        } else {
+            System.out.printf("%-15s%-15s%-15s%-15s\n", "Code", "Name", "Specialization", "Availability");
+            for (Doctor doctor : listFoundByName(ld, nameSearch)) {
+                doctor.print();
+            }
+        }
     }
 
     public Doctor getDoctorByCode(ArrayList<Doctor> ld, String code) {

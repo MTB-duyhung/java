@@ -10,10 +10,11 @@ package lab5p0055;
  * @author Admin
  */
 public class Doctor {
-     private String code; 
-     private String name;
-     private String specialization; 
-     private int availability; 
+
+    private String code;
+    private String name;
+    private String specialization;
+    private int availability;
 
     public Doctor(String code, String name, String specialization, int availability) {
         this.code = code;
@@ -53,5 +54,8 @@ public class Doctor {
     public void setAvailability(int availability) {
         this.availability = availability;
     }
-     
+
+    public void print() {
+        System.out.printf("%-15s%-15s%-15s%-15d\n", code, name, specialization, availability);
+    }
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ContactList {
 
-    public static void createContact(ArrayList<Contact> lc) {
+    public void createContact(ArrayList<Contact> lc) {
         System.out.print("Enter id contact: ");
         int contactId = Validation.checkInputInt();
         System.out.print("Enter first name: ");
@@ -26,12 +26,11 @@ public class ContactList {
         String address = Validation.checkInputString();
         System.out.print("Enter phone: ");
         String phone = Validation.checkInputPhone();
-        lc.add(new Contact(contactId, firstName + lastName, group, address,
-                phone, firstName, lastName));
+        lc.add(new Contact(contactId, firstName + lastName, group, address,phone, firstName, lastName));
         System.err.println("Add successful.");
     }
 
-    public static void printAllContact(ArrayList<Contact> lc) {
+    public void printAllContact(ArrayList<Contact> lc) {
         System.out.printf("%-5s%-25s%-20s%-20s%-20s%-20s%-20s\n", "Id", "Name",
                 "First name", "Last name", "Group", "Address", "Phone");
         for (Contact contact : lc) {
@@ -42,7 +41,7 @@ public class ContactList {
         }
     }
 
-    public static void deleteContactd(ArrayList<Contact> lc) {
+    public void deleteContactd(ArrayList<Contact> lc) {
         System.out.print("Enter id: ");
         int idDelete = Validation.checkInputInt();
         Contact contactDelete = getContactById(lc, idDelete);
@@ -55,7 +54,7 @@ public class ContactList {
         System.err.println("Delete successful.");
     }
 
-    public static Contact getContactById(ArrayList<Contact> lc, int idDelete) {
+    public Contact getContactById(ArrayList<Contact> lc, int idDelete) {
         for (Contact contact : lc) {
             if (contact.getContactId() == idDelete) {
                 return contact;
