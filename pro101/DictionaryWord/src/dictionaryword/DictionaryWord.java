@@ -36,7 +36,6 @@ public class DictionaryWord implements Comparable<DictionaryWord> {
 //        return this.word.compareTo(o.word);
 //    }
 
-    @Override
     public String toString() {
         return "" + word + "\n" + meanings;
     }
@@ -61,4 +60,9 @@ public class DictionaryWord implements Comparable<DictionaryWord> {
 //        }
 //        return true;
 //    }
+
+    @Override
+    public int compareTo(DictionaryWord o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

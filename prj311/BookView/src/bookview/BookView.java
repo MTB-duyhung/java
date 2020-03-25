@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package bookview;
 
-import Model.Item;
-import Model.Book;
-import Controller.BookController;
-import Model.Category;
-import Model.CategoryDB;
+//import Model.Item;
+//import Model.Book;
+//import Controller.BookController;
+//import Model.Category;
+//import Model.CategoryDB;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -24,9 +24,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BookView extends javax.swing.JFrame {
 
-    BookController bookCtr = new BookController();
-    CategoryDB catDB = new CategoryDB();
-    Vector<String> header = new Vector<String>();
+//    BookController bookCtr = new BookController();
+//    CategoryDB catDB = new CategoryDB();
+//    Vector<String> header = new Vector<String>();
     Vector data = new Vector();
     public BookView() {
         initComponents();
@@ -282,22 +282,22 @@ public class BookView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 private void getBooks() {
         //Data
-        data = bookCtr.getAllBooks();
-        //Table
-        DefaultTableModel tblModel;
-        tblModel = (DefaultTableModel) this.tblBook.getModel();
-        tblModel.setDataVector(data, header);
+//        data = bookCtr.getAllBooks();
+//        //Table
+//        DefaultTableModel tblModel;
+//        tblModel = (DefaultTableModel) this.tblBook.getModel();
+//        tblModel.setDataVector(data, header);
     }
 
     //Categories -> Combobox
-    private void getCategory() {
-        DefaultComboBoxModel mod = new DefaultComboBoxModel();
-        ArrayList<Category> allCats = catDB.getAllCats();
-        for (Category e : allCats) {
-            mod.addElement(new Item(e.getCatID(), e.getCatName()));
-        }
-        this.cbbCategory.setModel(mod);
-    }
+////    private void getCategory() {
+////        DefaultComboBoxModel mod = new DefaultComboBoxModel();
+////        ArrayList<Category> allCats = catDB.getAllCats();
+////        for (Category e : allCats) {
+////            mod.addElement(new Item(e.getCatID(), e.getCatName()));
+////        }
+////        this.cbbCategory.setModel(mod);
+////    }
     private void tblBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBookMouseClicked
         DefaultTableModel model = (DefaultTableModel) this.tblBook.getModel();
         this.txtBookID.setText(model.getValueAt(this.tblBook.getSelectedRow(), 0).toString());
@@ -308,60 +308,60 @@ private void getBooks() {
     }//GEN-LAST:event_tblBookMouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-        String bookID = this.txtBookID.getText();
-        String title = this.txtTitle.getText();
-        String author = this.txtAuthor.getText();
-        String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
-        String keyword = this.txtKeyword.getText();
-        //Check duplicate key
-        Book b = bookCtr.getBook(bookID);
-        if (b == null) {
-            //Add book
-            int n = bookCtr.addNewBook(bookID, title, author, category, keyword);
-            if (n == 1) {
-                getBooks();
-            } else {
-                JOptionPane.showMessageDialog(this, "Add Book failure!");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Duplicate key!");
-        }
+//        String bookID = this.txtBookID.getText();
+//        String title = this.txtTitle.getText();
+//        String author = this.txtAuthor.getText();
+//        String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
+//        String keyword = this.txtKeyword.getText();
+//        //Check duplicate key
+//        Book b = bookCtr.getBook(bookID);
+//        if (b == null) {
+//            //Add book
+//            int n = bookCtr.addNewBook(bookID, title, author, category, keyword);
+//            if (n == 1) {
+//                getBooks();
+//            } else {
+//                JOptionPane.showMessageDialog(this, "Add Book failure!");
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Duplicate key!");
+//        }
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        if (this.tblBook.getSelectedRow() == -1) {
-            if (this.tblBook.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "Table is empty!");
-            } else {
-                JOptionPane.showMessageDialog(this, "You must select a product");
-            }
-        } else {
-            DefaultTableModel model = (DefaultTableModel) this.tblBook.getModel();
-            String bookID = model.getValueAt(this.tblBook.getSelectedRow(), 0).toString();
-            String title = this.txtTitle.getText();
-            String author = this.txtAuthor.getText();
-            String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
-            String keyword = this.txtKeyword.getText();
-            int n = bookCtr.updateBook(bookID, title, author, category, keyword);
-            if (n == 1) {
-                getBooks();
-            } else {
-                JOptionPane.showMessageDialog(this, "Update Book failure!");
-            }
-        }
+//        if (this.tblBook.getSelectedRow() == -1) {
+//            if (this.tblBook.getRowCount() == 0) {
+//                JOptionPane.showMessageDialog(this, "Table is empty!");
+//            } else {
+//                JOptionPane.showMessageDialog(this, "You must select a product");
+//            }
+//        } else {
+//            DefaultTableModel model = (DefaultTableModel) this.tblBook.getModel();
+//            String bookID = model.getValueAt(this.tblBook.getSelectedRow(), 0).toString();
+//            String title = this.txtTitle.getText();
+//            String author = this.txtAuthor.getText();
+//            String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
+//            String keyword = this.txtKeyword.getText();
+//            int n = bookCtr.updateBook(bookID, title, author, category, keyword);
+//            if (n == 1) {
+//                getBooks();
+//            } else {
+//                JOptionPane.showMessageDialog(this, "Update Book failure!");
+//            }
+//        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int ret = JOptionPane.showConfirmDialog(this, "Do you want to delete?", "Confirm", JOptionPane.YES_NO_OPTION);
-        if (ret == JOptionPane.YES_OPTION) {
-            String bookID = this.txtBookID.getText();
-            int n = bookCtr.deleteBook(bookID);
-            if (n == 1) {
-                getBooks();
-            } else {
-                JOptionPane.showMessageDialog(this, "Delete Book failure!");
-            }
-        }
+//        int ret = JOptionPane.showConfirmDialog(this, "Do you want to delete?", "Confirm", JOptionPane.YES_NO_OPTION);
+//        if (ret == JOptionPane.YES_OPTION) {
+//            String bookID = this.txtBookID.getText();
+//            int n = bookCtr.deleteBook(bookID);
+//            if (n == 1) {
+//                getBooks();
+//            } else {
+//                JOptionPane.showMessageDialog(this, "Delete Book failure!");
+//            }
+//        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
@@ -379,25 +379,25 @@ private void getBooks() {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int pos = this.cbbSearch.getSelectedIndex();
-        switch (pos) {
-            case 0:
-            data = bookCtr.searchByTitle(this.txtSearch.getText());
-            break;
-            case 1:
-            data = bookCtr.searchByAuthor(this.txtSearch.getText());
-            break;
-            case 2:
-            data = bookCtr.searchByCategory(this.txtSearch.getText());
-            break;
-            case 3:
-            data = bookCtr.searchByKeyword(this.txtSearch.getText());
-            break;
-        }
-        //Table
-        DefaultTableModel tblModel;
-        tblModel = (DefaultTableModel) this.tblBook.getModel();
-        tblModel.setDataVector(data, header);
+//        int pos = this.cbbSearch.getSelectedIndex();
+//        switch (pos) {
+//            case 0:
+//            data = bookCtr.searchByTitle(this.txtSearch.getText());
+//            break;
+//            case 1:
+//            data = bookCtr.searchByAuthor(this.txtSearch.getText());
+//            break;
+//            case 2:
+//            data = bookCtr.searchByCategory(this.txtSearch.getText());
+//            break;
+//            case 3:
+//            data = bookCtr.searchByKeyword(this.txtSearch.getText());
+//            break;
+//        }
+//        //Table
+//        DefaultTableModel tblModel;
+//        tblModel = (DefaultTableModel) this.tblBook.getModel();
+//        tblModel.setDataVector(data, header);
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
@@ -425,6 +425,8 @@ private void getBooks() {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(BookView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

@@ -76,6 +76,7 @@ public class Queue {
             System.out.println(x + " ");
         }
     }
+    
     public static void main(String[] args) {
         Queue q=new Queue();
         q.input();

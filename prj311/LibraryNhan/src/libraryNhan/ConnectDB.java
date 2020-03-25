@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
+package libraryNhan;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import static library.DatabaseInfo.dbURL;
-import static library.DatabaseInfo.driverName;
+import static libraryNhan.DatabaseInfo.dbURL;
+import static libraryNhan.DatabaseInfo.driverName;
 
 /**
  *

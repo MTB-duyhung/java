@@ -1,9 +1,11 @@
+package View;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+
 
 import Model.Item;
 import Model.Book;
@@ -28,8 +30,18 @@ public class BookView extends javax.swing.JFrame {
     CategoryDB catDB = new CategoryDB();
     Vector<String> header = new Vector<String>();
     Vector data = new Vector();
+
     public BookView() {
         initComponents();
+        header.add("Book ID");
+        header.add("Title");
+        header.add("Author");
+        header.add("Category");
+        header.add("Keyword");
+        //Show all of Books (Table) 
+        getBooks();
+        //Show all of Categories (Combobox)
+        getCategory();
     }
 
     /**
@@ -43,14 +55,14 @@ public class BookView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBook = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         cbbCategory = new javax.swing.JComboBox<>();
         txtKeyword = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         txtBookID = new javax.swing.JTextField();
         txtTitle = new javax.swing.JTextField();
         txtAuthor = new javax.swing.JTextField();
@@ -58,12 +70,13 @@ public class BookView extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnPrint = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         cbbSearch = new javax.swing.JComboBox<>();
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        btnTree = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,80 +95,77 @@ public class BookView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblBook);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         cbbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbbCategoryActionPerformed(evt);
+            }
+        });
 
-        txtKeyword.setText("jTextField4");
+        jLabel6.setText("Keyword");
 
-        jLabel5.setText("Keyword");
+        jLabel8.setText("Category");
 
-        jLabel4.setText("Category");
+        jLabel9.setText("Book ID");
 
-        jLabel1.setText("Book ID");
+        jLabel10.setText("Title");
 
-        jLabel2.setText("Title");
+        jLabel11.setText("Author");
 
-        jLabel3.setText("Author");
-
-        txtBookID.setText("jTextField1");
-
-        txtTitle.setText("jTextField2");
-
-        txtAuthor.setText("jTextField3");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
                 .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtBookID, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
                             .addComponent(txtTitle))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(68, 68, 68)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(66, 66, 66)
-                                .addComponent(jLabel4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
                     .addComponent(txtBookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
                     .addComponent(cbbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
                     .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
                     .addComponent(txtAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         btnNew.setText("New");
@@ -186,20 +196,11 @@ public class BookView extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
-            }
-        });
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Search"));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Search"));
+        jLabel7.setText("Search by");
 
-        jLabel6.setText("Search by");
-
-        cbbSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        txtSearch.setText("jTextField5");
+        cbbSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Book ID", "Title", "Author", "Category", "Keyword" }));
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -208,13 +209,13 @@ public class BookView extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(jLabel7)
                 .addGap(35, 35, 35)
                 .addComponent(cbbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
@@ -223,17 +224,31 @@ public class BookView extends javax.swing.JFrame {
                 .addComponent(btnSearch)
                 .addContainerGap(85, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
                     .addComponent(cbbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
+
+        btnTree.setText("Tree");
+        btnTree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTreeActionPerformed(evt);
+            }
+        });
+
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,19 +258,21 @@ public class BookView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
+                .addGap(151, 151, 151)
                 .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(38, 38, 38)
                 .addComponent(btnUpdate)
-                .addGap(33, 33, 33)
+                .addGap(42, 42, 42)
                 .addComponent(btnDelete)
-                .addGap(36, 36, 36)
+                .addGap(40, 40, 40)
                 .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(47, 47, 47)
+                .addComponent(btnTree)
+                .addGap(47, 47, 47)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -265,68 +282,71 @@ public class BookView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNew)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete)
                     .addComponent(btnPrint)
+                    .addComponent(btnTree)
                     .addComponent(btnExit))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private void getBooks() {
-        //Data
-        data = bookCtr.getAllBooks();
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        int pos = this.cbbSearch.getSelectedIndex();
+        switch (pos) {
+            case 0:
+            data = bookCtr.searchByTitle(this.txtSearch.getText());
+            break;
+            case 1:
+            data = bookCtr.searchByAuthor(this.txtSearch.getText());
+            break;
+            case 2:
+            data = bookCtr.searchByCategory(this.txtSearch.getText());
+            break;
+            case 3:
+            data = bookCtr.searchByKeyword(this.txtSearch.getText());
+            break;
+        }
         //Table
         DefaultTableModel tblModel;
         tblModel = (DefaultTableModel) this.tblBook.getModel();
         tblModel.setDataVector(data, header);
-    }
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    //Categories -> Combobox
-    private void getCategory() {
-        DefaultComboBoxModel mod = new DefaultComboBoxModel();
-        ArrayList<Category> allCats = catDB.getAllCats();
-        for (Category e : allCats) {
-            mod.addElement(new Item(e.getCatID(), e.getCatName()));
-        }
-        this.cbbCategory.setModel(mod);
-    }
-    private void tblBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBookMouseClicked
-        DefaultTableModel model = (DefaultTableModel) this.tblBook.getModel();
-        this.txtBookID.setText(model.getValueAt(this.tblBook.getSelectedRow(), 0).toString());
-        this.txtTitle.setText(model.getValueAt(this.tblBook.getSelectedRow(), 1).toString());
-        this.txtAuthor.setText(model.getValueAt(this.tblBook.getSelectedRow(), 2).toString());
-        this.cbbCategory.setSelectedItem(model.getValueAt(this.tblBook.getSelectedRow(), 3).toString());
-        this.txtKeyword.setText(model.getValueAt(this.tblBook.getSelectedRow(), 4).toString());
-    }//GEN-LAST:event_tblBookMouseClicked
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
-    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-        String bookID = this.txtBookID.getText();
-        String title = this.txtTitle.getText();
-        String author = this.txtAuthor.getText();
-        String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
-        String keyword = this.txtKeyword.getText();
-        //Check duplicate key
-        Book b = bookCtr.getBook(bookID);
-        if (b == null) {
-            //Add book
-            int n = bookCtr.addNewBook(bookID, title, author, category, keyword);
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+                MessageFormat header = new MessageFormat("Books");
+                MessageFormat footer = new MessageFormat("");
+                try {
+                        this.tblBook.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Unable to print");
+                    }
+    }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int ret = JOptionPane.showConfirmDialog(this, "Do you want to delete?", "Confirm", JOptionPane.YES_NO_OPTION);
+        if (ret == JOptionPane.YES_OPTION) {
+            String bookID = this.txtBookID.getText();
+            int n = bookCtr.deleteBook(bookID);
             if (n == 1) {
                 getBooks();
             } else {
-                JOptionPane.showMessageDialog(this, "Add Book failure!");
+                JOptionPane.showMessageDialog(this, "Delete Book failure!");
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Duplicate key!");
         }
-    }//GEN-LAST:event_btnNewActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         if (this.tblBook.getSelectedRow() == -1) {
@@ -351,55 +371,63 @@ private void getBooks() {
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int ret = JOptionPane.showConfirmDialog(this, "Do you want to delete?", "Confirm", JOptionPane.YES_NO_OPTION);
-        if (ret == JOptionPane.YES_OPTION) {
-            String bookID = this.txtBookID.getText();
-            int n = bookCtr.deleteBook(bookID);
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+        String bookID = this.txtBookID.getText();
+        String title = this.txtTitle.getText();
+        String author = this.txtAuthor.getText();
+        String category = ((Item) this.cbbCategory.getSelectedItem()).getId();
+        String keyword = this.txtKeyword.getText();
+        //Check duplicate key
+        Book b = bookCtr.getBook(bookID);
+        if (b == null) {
+            //Add book
+            int n = bookCtr.addNewBook(bookID, title, author, category, keyword);
             if (n == 1) {
                 getBooks();
             } else {
-                JOptionPane.showMessageDialog(this, "Delete Book failure!");
+                JOptionPane.showMessageDialog(this, "Add Book failure!");
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Duplicate key!");
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnNewActionPerformed
 
-    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        MessageFormat header = new MessageFormat("Books");
-        MessageFormat footer = new MessageFormat("");
-        try {
-            this.tblBook.print(JTable.PrintMode.FIT_WIDTH, header, footer);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Unable to print");
-        }
-    }//GEN-LAST:event_btnPrintActionPerformed
+    private void cbbCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbCategoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbbCategoryActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnExitActionPerformed
+    private void tblBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBookMouseClicked
+        DefaultTableModel model = (DefaultTableModel) this.tblBook.getModel();
+        this.txtBookID.setText(model.getValueAt(this.tblBook.getSelectedRow(), 0).toString());
+        this.txtTitle.setText(model.getValueAt(this.tblBook.getSelectedRow(), 1).toString());
+        this.txtAuthor.setText(model.getValueAt(this.tblBook.getSelectedRow(), 2).toString());
+        this.cbbCategory.setSelectedItem(model.getValueAt(this.tblBook.getSelectedRow(), 3).toString());
+        this.txtKeyword.setText(model.getValueAt(this.tblBook.getSelectedRow(), 4).toString());
+    }//GEN-LAST:event_tblBookMouseClicked
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int pos = this.cbbSearch.getSelectedIndex();
-        switch (pos) {
-            case 0:
-            data = bookCtr.searchByTitle(this.txtSearch.getText());
-            break;
-            case 1:
-            data = bookCtr.searchByAuthor(this.txtSearch.getText());
-            break;
-            case 2:
-            data = bookCtr.searchByCategory(this.txtSearch.getText());
-            break;
-            case 3:
-            data = bookCtr.searchByKeyword(this.txtSearch.getText());
-            break;
-        }
+    private void btnTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreeActionPerformed
+        Tree t=new Tree();
+        t.setVisible(true);
+    }//GEN-LAST:event_btnTreeActionPerformed
+
+    public void getBooks() {
+        //Data
+        data = bookCtr.getAllBooks();
         //Table
         DefaultTableModel tblModel;
         tblModel = (DefaultTableModel) this.tblBook.getModel();
         tblModel.setDataVector(data, header);
-    }//GEN-LAST:event_btnSearchActionPerformed
+    }
 
+    //Categories -> Combobox
+    public void getCategory() {
+        DefaultComboBoxModel mod = new DefaultComboBoxModel();
+        ArrayList<Category> allCats = catDB.getAllCats();
+        for (Category e : allCats) {
+            mod.addElement(new Item(e.getCatID(), e.getCatName()));
+        }
+        this.cbbCategory.setModel(mod);
+    }
     /**
      * @param args the command line arguments
      */
@@ -442,17 +470,18 @@ private void getBooks() {
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnTree;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cbbCategory;
     private javax.swing.JComboBox<String> cbbSearch;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBook;
     private javax.swing.JTextField txtAuthor;
