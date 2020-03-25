@@ -10,6 +10,7 @@ package lab12p0073;
  * @author Admin
  */
 public class Expenses {
+
     private int id;
     private String date;
     private double amount;
@@ -61,5 +62,5 @@ public class Expenses {
     public String toString() {
         return "Expenses{" + "id=" + id + ", date=" + date + ", amount=" + amount + ", content=" + content + '}';
     }
-    
+
 }

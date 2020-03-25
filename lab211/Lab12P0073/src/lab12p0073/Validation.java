@@ -5,6 +5,7 @@
  */
 package lab12p0073;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Scanner;
 public class Validation {
 
     private static final Scanner in = new Scanner(System.in);
-    private static final String DATE_VALID="^\\d{2}-\\{2}-\\d{4}$";
+    private static final String DATE_VALID = "^\\d{2}-\\w{3}-\\d{4}$";
 
     public static int checkInputIntLimit(int min, int max) {
         while (true) {
@@ -66,9 +67,9 @@ public class Validation {
             }
 
         }
-    }  
-    
-    public static String checkInputDate(){
+    }
+
+    public static String checkInputDate() {
         while (true) {
             try {
                 String result = in.nextLine().trim();
@@ -82,4 +83,14 @@ public class Validation {
             }
         }
     }
+
+    public static int checkIdExist(ArrayList<Expenses> le, int id) {
+        for (int i = 0; i < le.size(); i++) {
+            if (le.get(i).getId() == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }
