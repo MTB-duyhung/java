@@ -157,7 +157,7 @@ public class Sort {
         int x;
         for (i = 1; i < n; i++) {
             x = A[i];
-            s = i; 
+            s = i;
             while (s > 0 && x > A[(s - 1) / 2]) {
                 A[s] = A[(s - 1) / 2];
                 s = (s - 1) / 2;
@@ -167,8 +167,8 @@ public class Sort {
         for (i = n - 1; i > 0; i--) {
             x = A[i];
             A[i] = A[0];
-            f = 0; 
-            s = 2 * f + 1; 
+            f = 0;
+            s = 2 * f + 1;
             if (s + 1 < i && A[s] < A[s + 1]) {
                 s = s + 1;
             }

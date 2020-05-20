@@ -33,14 +33,38 @@ public class CSVList {
     private static final String COMMA_DELIMITER = ",";
 
     public void addinput() {
-        ls.add(new CSV(1, "pham ", "xxx@gmail.com", "'12345678", "AAA - BBB - CCC"));
+//        ls.add(new CSV(1, "pham ", "xxx@gmail.com", "'12345678", "AAA - BBB - CCC"));
+        FileWriter fileWriter = null;
+        System.out.print("Enter Path to input: ");
+        String fileName = in.nextLine().trim();
+        try {
+        fileWriter = new FileWriter(fileName);
+        fileWriter.append(String.valueOf(1));
+        fileWriter.append(COMMA_DELIMITER);
+        fileWriter.append(String.valueOf("pham"));
+        fileWriter.append(COMMA_DELIMITER);
+        fileWriter.append(String.valueOf("xxx@gmail.com"));
+        fileWriter.append(COMMA_DELIMITER);
+        fileWriter.append(String.valueOf("12345678"));
+        fileWriter.append(COMMA_DELIMITER);
+        fileWriter.append(String.valueOf("AAA - BBB - CCC"));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     public void formatName() {
         for (int i = 0; i < ls.size(); i++) {
             String name = ls.get(i).getName().trim();
             name = name.toLowerCase().replaceAll("\\s+", ",");
-            String[] arr = name.split(",");
+            String[] arr = name.split(COMMA_DELIMITER);
             StringBuffer sb = new StringBuffer();
             for (int j = 0; j < arr.length; j++) {
                 sb.append(Character.toUpperCase(arr[j].charAt(0))).append(arr[j].substring(1)).append(" ");
@@ -72,8 +96,9 @@ public class CSVList {
         try {
             fileReader = new BufferedReader(new FileReader(fileName));
             while ((line = fileReader.readLine()) != null) {
-                String[] splitCSV = line.split(COMMA_DELIMITER);
-                ls.add(new CSV(Integer.parseInt(splitCSV[0]), splitCSV[1], splitCSV[2], splitCSV[3], splitCSV[4]));
+                String[] splitCSV = line.split(COMMA_DELIMITER);               
+                CSV csv = new CSV(Integer.parseInt(splitCSV[0]), splitCSV[1], splitCSV[2], splitCSV[3], splitCSV[4]);
+                ls.add(csv);
             }
             System.err.println("Import: Done");
         } catch (FileNotFoundException e) {
