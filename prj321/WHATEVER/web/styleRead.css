@@ -1,0 +1,43 @@
+.readPdf{
+    text-align: center;
+}
+button {
+    background: black;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+.btnRead {
+    margin-top: 20px;
+    background: #0e3970;
+    color: white;
+    border: 1px solid white;
+    font-size: 17px;
+}
+.btnRead:hover {
+    border: 1px solid #FF5056;
+    background:#FF5056;
+}
+.bookInfo{
+    display: flex;
+    margin: 20px 80px 20px 20px;
+    color: black;
+}
+.bookLeft{
+    width: 40%;
+}
+.bookRight{
+    width: 60%;  
+}
+h3{
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+h7{
+    color: rgb(0, 127, 240);
+}
+img {
+    width: 90%;
+    height: 90%;
+}

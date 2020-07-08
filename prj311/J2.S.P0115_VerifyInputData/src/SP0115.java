@@ -6,16 +6,16 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Admin
  */
 public class SP0115 extends javax.swing.JFrame {
 
+    String Code="^[A-Za-z0-9]{1,10}$";
+    String Name="^[A-Za-z]{1,30}$";
     public SP0115() {
         initComponents();
-//        validData();
     }
 
     /**
@@ -50,30 +50,55 @@ public class SP0115 extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
 
+        txtCode.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCodeFocusLost(evt);
+            }
+        });
         txtCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodeActionPerformed(evt);
             }
         });
 
+        txtName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNameFocusLost(evt);
+            }
+        });
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
 
+        txtDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDateFocusLost(evt);
+            }
+        });
         txtDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDateActionPerformed(evt);
             }
         });
 
+        txtNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNumberFocusLost(evt);
+            }
+        });
         txtNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumberActionPerformed(evt);
             }
         });
 
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -106,10 +131,12 @@ public class SP0115 extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                                .addComponent(txtDate))
-                            .addComponent(txtEmail))))
+                            .addComponent(txtEmail)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                    .addComponent(txtDate))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
@@ -135,59 +162,14 @@ public class SP0115 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private boolean validData() {
-        String S;
-        S = this.txtCode.getText().trim().toUpperCase();
-        this.txtCode.setText(S);
-        if (!S.matches("^E\\d{10}$")) {
-            JOptionPane.showMessageDialog(this, "-	Student code: max length is 10, not contains special characters (@, #, $)");
-            txtCode.requestFocus();
-            return false;
-        }
-        S = this.txtName.getText().trim().toUpperCase();
-        this.txtName.setText(S);
-        if (S.length() == 0) {
-            JOptionPane.showMessageDialog(this, "Name is required.");
-            txtName.requestFocus();
-            return false;
-        }
-        S = this.txtEmail.getText().trim().toUpperCase();
-        this.txtEmail.setText(S);
-        if (!S.matches("^\\w+@\\w+[.]\\w+$")) {
-            JOptionPane.showMessageDialog(this, "Email: anyname@any.any.");
-            txtEmail.requestFocus();
-            return false;
-        }
-        S = this.txtEmail.getText().trim().toUpperCase();
-        this.txtEmail.setText(S);
-        if (!S.matches("^\\w+@\\w+[.]\\w+$")) {
-            JOptionPane.showMessageDialog(this, "Email: anyname@any.any.");
-            txtEmail.requestFocus();
-            return false;
-        }
-        S = this.txtEmail.getText().trim().toUpperCase();
-        this.txtEmail.setText(S);
-        if (!S.matches("^\\w+@\\w+[.]\\w+$")) {
-            JOptionPane.showMessageDialog(this, "Email: anyname@any.any.");
-            txtEmail.requestFocus();
-            return false;
-        }
-        return true;
-    }
     private void txtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodeActionPerformed
-        String s;
-        s = this.txtCode.getText().trim().toUpperCase();
-//        this.txtCode.setText(S);
-        if (s.contains("@")||s.contains("#")) {
-            JOptionPane.showMessageDialog(this, "Student code: max length is 10, not contains special characters (@, #, $)");
-//            txtCode.requestFocus();
-        }
+
     }//GEN-LAST:event_txtCodeActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -205,6 +187,54 @@ public class SP0115 extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtCodeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodeFocusLost
+        String S = this.txtCode.getText().trim();
+        if (!S.isEmpty())
+        if (!S.matches(Code)) {
+            JOptionPane.showMessageDialog(this, "Student code: max length is 10, not contains special characters (@, #, $)");
+            txtCode.requestFocus();
+        }
+    }//GEN-LAST:event_txtCodeFocusLost
+
+    private void txtNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNameFocusLost
+        String S = this.txtName.getText().trim();
+        if(!S.isEmpty())
+        if (!S.matches(Name)) {
+            JOptionPane.showMessageDialog(this, "Student name: max length is 30 and only contains words");
+            txtName.requestFocus();
+        }
+    }//GEN-LAST:event_txtNameFocusLost
+
+    private void txtDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDateFocusLost
+        String S = this.txtDate.getText().trim();
+        if(!S.isEmpty())
+        if (!S.matches("^(0[1-9]|[12][0-9]|30)(/|-)(0[469]|11)(/|-)((19|2[0-9])[0-9]{2})$"
+                + "|^(0[1-9]|[12][0-9]|3[01])(/|-)(0[13578]|10|12)(/|-)((19|2[0-9])[0-9]{2})$"
+                + "|^(0[1-9]|1[0-9]|2[0-8])(/|-)02(/|-)((19|2[0-9])[0-9]{2})$"
+                + "|^29(/|-)02(/|-)(2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))$")) {
+            JOptionPane.showMessageDialog(this, "Birth Date: in format MM/DD/YYYY and valid date");
+            txtDate.requestFocus();
+        }
+    }//GEN-LAST:event_txtDateFocusLost
+
+    private void txtNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumberFocusLost
+        String S = this.txtNumber.getText().trim();
+        if(!S.isEmpty())
+        if (!S.matches("^[0-9]{1,15}$")) {
+            JOptionPane.showMessageDialog(this, "Phone number: max length is 15, contain numeric characters only (0 – 9)");
+            txtNumber.requestFocus();
+        }
+    }//GEN-LAST:event_txtNumberFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        String S = this.txtEmail.getText().trim();
+        if(!S.isEmpty())
+        if (!S.matches("^[A-Za-z0-9+_.-]{1,30}+@{1}+[A-Za-z0-9+_.-]{1,30}$")) {
+            JOptionPane.showMessageDialog(this, "Email: max length is 30, contain only one “@” character, do not contain special characters (!, #, $)");
+            txtEmail.requestFocus();
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
 
     /**
      * @param args the command line arguments
