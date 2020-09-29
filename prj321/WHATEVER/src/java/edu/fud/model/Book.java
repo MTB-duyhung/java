@@ -11,21 +11,12 @@ package edu.fud.model;
  */
 public class Book {
 
-    private String bookID;
-    private String title;
-    private String author;
-    private String publisher;
-    private int year;
-    private String category;
-    private String language;
-    private String preview;
-    private String picture;
-    private String content;
+    private String bookID,title,author,publisher,year,category,language,preview,picture,content;
 
     public Book() {
     }
 
-    public Book(String bookID, String title, String author, String publisher, int year, String category, String language, String preview, String picture, String content) {
+    public Book(String bookID, String title, String author, String publisher, String year, String category, String language, String preview, String picture, String content) {
         this.bookID = bookID;
         this.title = title;
         this.author = author;
@@ -70,11 +61,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -118,5 +109,10 @@ public class Book {
         this.content = content;
     }
 
-   
+    @Override
+    public String toString() {
+        return "Book{" + "bookID=" + bookID + ", title=" + title + ", author=" + author + ", publisher=" + publisher + ", year=" + year + ", category=" + category + ", language=" + language + ", preview=" + preview + ", picture=" + picture + ", content=" + content + '}';
+    }
+
+    
 }

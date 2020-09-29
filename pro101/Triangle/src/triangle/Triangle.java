@@ -1,12 +1,13 @@
 package triangle;
 
+import static java.lang.Math.sqrt;
 import java.util.*;
 
 public class Triangle {
 
-    protected float lengthFirstSide;
-    protected float lengthSecondSide;
-    protected float lengthThirdSide;
+    protected float lengthFirstSide ;
+    protected float lengthSecondSide ;
+    protected float lengthThirdSide ;
     Scanner in = new Scanner(System.in);
 
     public float getLengthFirstSide() {
@@ -36,17 +37,17 @@ public class Triangle {
     void readLength() {
 
         do {
-            System.out.print("Enter length of First Side(>0):");
+            System.out.print("Enter length of First Side(1<=a<=200):");
             lengthFirstSide = in.nextFloat();
-        } while (lengthFirstSide <= 0);
+        } while (lengthFirstSide < 1 || lengthFirstSide > 200);
         do {
-            System.out.print("Enter length of Second Side(>0):");
+            System.out.print("Enter length of Second Side(1<=b<=200):");
             lengthSecondSide = in.nextFloat();
-        } while (lengthSecondSide <= 0);
+        } while (lengthSecondSide < 1 || lengthSecondSide > 200);
         do {
-            System.out.print("Enter length of Third Side(>0):");
+            System.out.print("Enter length of Third Side(1<=c<=200):");
             lengthThirdSide = in.nextFloat();
-        } while (lengthThirdSide <= 0);
+        } while (lengthThirdSide < 1 || lengthThirdSide > 200);
     }
 
     boolean check(float a, float b, float c) {
@@ -115,7 +116,11 @@ public class Triangle {
             if (equilateral(lengthFirstSide, lengthSecondSide, lengthThirdSide) == true) {
                 System.out.println("The triangle is an equilateral triangle!");
             } else if (isosceles(lengthFirstSide, lengthSecondSide, lengthThirdSide) == true) {
-                System.out.println("The triangle is an isosceles triangle!");
+                if (right(lengthFirstSide, lengthSecondSide, lengthThirdSide) == true) {
+                    System.out.println("The triangle is an isosceles right triangle!");
+                } else {
+                    System.out.println("The triangle is an isosceles triangle!");
+                }
             } else if (right(lengthFirstSide, lengthSecondSide, lengthThirdSide) == true) {
                 System.out.println("The triangle is a right triangle!");
             } else {
@@ -132,11 +137,11 @@ public class Triangle {
     public static void main(String[] args) {
         Triangle tri = new Triangle();
         tri.readLength();
+//        System.out.println("c2=" + tri.lengthThirdSide * tri.lengthThirdSide);
         tri.printCheck();
-        tri.printPerimeter();
-        tri.printArea();
+//        tri.printPerimeter();
+//        tri.printArea();
         tri.printKind();
-
     }
 
 }

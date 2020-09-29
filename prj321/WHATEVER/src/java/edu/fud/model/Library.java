@@ -12,25 +12,26 @@ import java.util.Date;
  * @author Hoang My
  */
 public class Library {
-    private String libraryID;
+
+    private String userID;
     private String bookID;
     private Date time;
 
     public Library() {
     }
 
-    public Library(String libraryID, String bookID, Date time) {
-        this.libraryID = libraryID;
+    public Library(String userID, String bookID, Date time) {
+        this.userID = userID;
         this.bookID = bookID;
         this.time = time;
     }
 
-    public String getLibraryID() {
-        return libraryID;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setLibraryID(String libraryID) {
-        this.libraryID = libraryID;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getBookID() {
@@ -48,6 +49,8 @@ public class Library {
     public void setTime(Date time) {
         this.time = time;
     }
-    
-    
+
+    public void print() {
+        System.out.println("BookID : " + getBookID() + "Time: " + getTime());
+    }
 }

@@ -13,7 +13,7 @@ import edu.fud.DAO.userDAO;
  */
 public class User {
 
-    private String userID;
+    private int userID;
     private String name;
     private String userName;
     private String password;
@@ -23,7 +23,7 @@ public class User {
     public User() {
     }
 
-    public User(String userID, String name, String userName, String password, String email, int userRight) {
+    public User(int userID, String name, String userName, String password, String email, int userRight) {
         this.userID = userID;
         this.name = name;
         this.userName = userName;
@@ -32,11 +32,19 @@ public class User {
         this.userRight = userRight;
     }
 
-    public String getUserID() {
+    public User(int userID, String name, String userName, String email, int userRight) {
+        this.userID = userID;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.userRight = userRight;
+    }
+
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -80,12 +88,17 @@ public class User {
         this.userRight = userRight;
     }
 
-    public boolean changePass(String oldP, String newP) {
-        if (password.equals(oldP)) {
-            password = newP;
-            return userDAO.updateUser(this);
-        }
-        return false;
+//    public boolean changePass(String oldP, String newP) {
+//        if (password.equals(oldP)) {
+//            password = newP;
+//            return userDAO.updateUser(this);
+//        }
+//        return false;
+//    }
+
+    @Override
+    public String toString() {
+        return "User{" + "userID=" + userID + ", name=" + name + ", userName=" + userName + ", password=" + password + ", email=" + email + ", userRight=" + userRight + '}';
     }
 
 }

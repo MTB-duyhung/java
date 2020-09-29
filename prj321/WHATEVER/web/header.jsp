@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,25 +22,30 @@
                             <a class="navbar-brand" href="home.jsp"> <span>WHATEVER</span> <small>Book for everyone</small></a>
                         </div>
                         <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                            <form action="#" class="searchform order-lg-last">
+                            <s:form action="searchBook" cssClass="searchform order-lg-last">
                                 <div class="form-group d-flex">
-                                    <input type="text" class="form-control pl-3" placeholder="Search">
+                                    <input type="text" name="searchValue" class="form-control pl-3" placeholder="Search">
                                     <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
                                 </div>
-                            </form>
+                            </s:form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex">
-                    <div >
-                        <a  href="login.jsp"> Login</a>
+                    <div> 
+                        <s:if test="%{#session.NAME!=null}">
+                            Welcome,
+                            <a href="editUser?userID=${sessionScope.ID}">
+                                ${sessionScope.NAME}<br>
+                            </a>
+
+                            <a  href="logOut"> Logout</a>
+                        </s:if>
+                        <s:else>
+                            <a  href="Login.jsp"> Login</a>
+                        </s:else>
+
                     </div>
-<!--                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-
-
-                        </p>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -51,12 +58,12 @@
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item"><a href="home.jsp" class="nav-link">Home</a></li>
-
-                        <li class="nav-item"><a href="TopSeller.jsp" class="nav-link">Top Seller</a></li>
-                        <li class="nav-item"><a href="Book.jsp" class="nav-link">Books</a></li>
-                        <li class="nav-item"><a href="Author.jsp" class="nav-link">Author</a></li>
-
+                        <li class="nav-item"><a href="getAllBook" class="nav-link">Books</a></li>
                         <li class="nav-item"><a href="Contact.jsp" class="nav-link">Contact</a></li>
+                            <s:if test="%{#session.permission}">
+                            <li class="nav-item"><a href="manageBookAction" class="nav-link">Manage Book</a></li>
+                            <li class="nav-item"><a href="manageUserAction" class="nav-link">Manage User</a></li>
+                            </s:if>
                     </ul>
                 </div>
             </div>

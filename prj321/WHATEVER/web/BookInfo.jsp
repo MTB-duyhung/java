@@ -2,11 +2,14 @@
 <%@page import="edu.fud.DAO.bookDAO"%>
 <%@page import="edu.fud.model.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Read Book Online</title>
+        <title>${title}</title>
+        <link rel="icon" type="image/gif/png" href="images/icon.PNG">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
@@ -19,7 +22,7 @@
         <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/flaticon.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="styleRead.css">
+        <link rel="stylesheet" href="css/styleRead.css">
     </head>
     <body>
         <div>
@@ -27,27 +30,29 @@
         </div>
         <div class="bookInfo">
             <div class="bookLeft">
-                <%
-                    bookDAO bList = new bookDAO();
-                    Book b = bList.getBook("B001");
-                    out.print("<img src='"+ b.getPicture()+"'/>");
-                %>
-                <!--<img src="https://salt.tikicdn.com/cache/w390/media/catalog/product/t/u/tuoi-tre-dang-gia-bao-nhieu-u547-d20161012-t113832-888179.u3059.d20170616.t095744.390222.jpg">-->       
+                <img class="imgBook" src="${picture}"/><br/>
             </div>
             <div class="bookRight">
-                <%                    bookDAO pList = new bookDAO();
-                    Book sp = pList.getBook("B001");
-                    out.print("<h3>" + sp.getTitle() + "</h3>"
-                            + "Author: " + "<h7>" + sp.getAuthor() + "</h7><br/>"
-                            + "Publisher: " + "<h7>" + sp.getPublisher() + "</h7><br/>"
-                            + "Year: " + "<h7>" + sp.getYear() + "</h7><br/>"
-                            + "Category: " + "<h7>" + sp.getCategory() + "</h7><br/>"
-                            + "Language: " + "<h7>" + sp.getLanguage() + "</h7><br/>"
-                            + "Preview: " + "<h7>" + sp.getPreview() + "</h7><br/>");
-                %>
-                <button class="btnRead" type="button" value="Read" onClick="javascript:window.location = '<%= "ReadBook.jsp"%>';">Read</button>
+                <h3>${title}</h3>
+                Author: <h7> ${author}</h7><br/>
+                Publisher: <h7> ${publisher}</h7><br/>
+                Year: <h7> ${year}</h7><br/>
+                Category: <h7> ${category}</h7><br/>
+                Language: <h7> ${language}</h7><br/>
+                Preview: <h7>${preview}</h7><br/>
+                    <s:if test="%{#session.NAME!=null}">
+                        <s:a action="readBook">
+                            <s:param name="bookID">${bookID}</s:param>
+                            <button class="btnRead" >Read</button>
+                    </s:a>
+                </s:if>
+                <s:else>
+                    <br>
+                    <p style="color: #ff0000">You have to <a href="Login.jsp">Login</a> to read book!</p>
+                </s:else>
             </div>
             <br>
+
         </div>
         <div>
             <jsp:include page="footer.jsp"/>

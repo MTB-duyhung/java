@@ -1,0 +1,43 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        
+        <action name="add" class="edu.fud.controller.AddActionSupport">
+            <result name="success">listContact.jsp</result>
+            <result name="fail">fail.jsp</result>
+            <result name="error">Add.jsp</result>
+        </action>
+        
+        <action name="addgroup" class="edu.fud.controller.AddGroupActionSupport">
+            <result name="success">listGroup.jsp</result>
+            <result name="fail">fail.jsp</result>
+            <result name="error">Addgroup.jsp</result>
+        </action>
+        
+        <action name="list" class="edu.fud.controller.ListContactActionSupport">
+            <result name="success">listContact.jsp</result>
+        </action>
+        
+        <action name="listg" class="edu.fud.controller.ListGroupActionSupport">
+            <result name="success">listGroup.jsp</result>
+        </action>
+        
+        <action name="edit" class="edu.fud.controller.EditActionSupport">
+            <result name="success">Edit.jsp</result>
+            <result name="fail">fail.jsp</result>
+        </action>
+        
+        <action name="editsubmit" class="edu.fud.controller.EditActionSupport" method="editContact">
+            <result name="success">listContact.jsp</result>
+            <result name="error">Edit.jsp</result>
+        </action>
+        
+        <action name="delete" class="edu.fud.controller.DelActionSupport">
+            <result name="success">listContact.jsp</result>
+        </action>
+    </package>
+</struts>
