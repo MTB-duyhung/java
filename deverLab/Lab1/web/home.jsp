@@ -21,14 +21,14 @@
             <s:form action="short">
                 <input type="text" name="originalURL" placeholder="Input your link"/>
                 <button >Shorten</button><br>
-                <label>Custom Link: </label>
+                <input type="text" name="custom" placeholder="Custom link"/>
                 <p style="color: red">${error}</p> 
-                <input type="text" name="custom" />
+                
             </s:form>
         
         <br>
         <!--<form action="redirect">-->
-            Shorten Link: <p name="newURL">${newURL}</p>
+        Shorten Link: <a name="newURL" href="redirect?shortURL=${shortURL}">${newURL}</a>
             <!--<button >Shorten</button><br>-->
         <!--</form>-->
         </div>

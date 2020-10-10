@@ -69,7 +69,7 @@ public class ShortenAction extends ActionSupport {
         if (custom.length() != 0) {
             if (u.custom(custom)) {
                 shortURL = custom;
-                newURL = "localhost:8080/Lab1/shortURL=" + shortURL;
+                newURL = "localhost:8080/Lab1/redirect?shortURL=" + shortURL;
             } else {
                 newURL = "This custom link is exist. Please use another.";
             }
