@@ -1,0 +1,13 @@
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.exe
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.deps.json
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.runtimeconfig.json
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.runtimeconfig.dev.json
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.dll
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\bin\Debug\netcoreapp3.1\xuLyChuoi.pdb
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.AssemblyInfoInputs.cache
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.AssemblyInfo.cs
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.csproj.CoreCompileInputs.cache
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.dll
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.pdb
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.genruntimeconfig.cache
+D:\nhan\C#\xuLyChuoi\xuLyChuoi\obj\Debug\netcoreapp3.1\xuLyChuoi.csprojAssemblyReference.cache

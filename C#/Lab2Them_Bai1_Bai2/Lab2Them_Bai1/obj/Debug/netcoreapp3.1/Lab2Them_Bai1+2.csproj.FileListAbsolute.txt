@@ -1,0 +1,13 @@
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.exe
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.deps.json
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.runtimeconfig.json
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.runtimeconfig.dev.json
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.dll
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\bin\Debug\netcoreapp3.1\Lab2Them_Bai1+2.pdb
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.csprojAssemblyReference.cache
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.AssemblyInfoInputs.cache
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.AssemblyInfo.cs
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.csproj.CoreCompileInputs.cache
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.dll
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.pdb
+D:\nhan\C#\Lab2Them_Bai1\Lab2Them_Bai1\obj\Debug\netcoreapp3.1\Lab2Them_Bai1+2.genruntimeconfig.cache

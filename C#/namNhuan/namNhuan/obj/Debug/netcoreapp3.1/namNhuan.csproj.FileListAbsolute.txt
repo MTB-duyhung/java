@@ -1,0 +1,12 @@
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.exe
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.deps.json
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.runtimeconfig.json
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.runtimeconfig.dev.json
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.dll
+D:\nhan\C#\namNhuan\namNhuan\bin\Debug\netcoreapp3.1\namNhuan.pdb
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.AssemblyInfoInputs.cache
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.AssemblyInfo.cs
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.csproj.CoreCompileInputs.cache
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.dll
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.pdb
+D:\nhan\C#\namNhuan\namNhuan\obj\Debug\netcoreapp3.1\namNhuan.genruntimeconfig.cache

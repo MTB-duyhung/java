@@ -1,0 +1,13 @@
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.exe
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.deps.json
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.runtimeconfig.json
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.runtimeconfig.dev.json
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.dll
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\bin\Debug\netcoreapp3.1\Lab1_Animal.pdb
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.AssemblyInfoInputs.cache
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.AssemblyInfo.cs
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.csproj.CoreCompileInputs.cache
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.dll
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.pdb
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.genruntimeconfig.cache
+D:\nhan\C#\Lab1_Animal\Lab1_Animal\obj\Debug\netcoreapp3.1\Lab1_Animal.csprojAssemblyReference.cache

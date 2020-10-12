@@ -1,0 +1,13 @@
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.exe
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.deps.json
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.runtimeconfig.json
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.runtimeconfig.dev.json
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.dll
+D:\nhan\C#\tong\tong\bin\Debug\netcoreapp3.1\tong.pdb
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.csprojAssemblyReference.cache
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.AssemblyInfoInputs.cache
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.AssemblyInfo.cs
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.csproj.CoreCompileInputs.cache
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.dll
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.pdb
+D:\nhan\C#\tong\tong\obj\Debug\netcoreapp3.1\tong.genruntimeconfig.cache

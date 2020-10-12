@@ -1,0 +1,12 @@
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.exe
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.deps.json
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.runtimeconfig.json
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.runtimeconfig.dev.json
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.dll
+D:\nhan\C#\phuongTrinh\phuongTrinh\bin\Debug\netcoreapp3.1\phuongTrinh.pdb
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.AssemblyInfoInputs.cache
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.AssemblyInfo.cs
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.csproj.CoreCompileInputs.cache
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.dll
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.pdb
+D:\nhan\C#\phuongTrinh\phuongTrinh\obj\Debug\netcoreapp3.1\phuongTrinh.genruntimeconfig.cache

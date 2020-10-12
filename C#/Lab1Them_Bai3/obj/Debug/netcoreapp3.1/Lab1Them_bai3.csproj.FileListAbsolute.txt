@@ -1,0 +1,13 @@
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.exe
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.deps.json
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.runtimeconfig.json
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.runtimeconfig.dev.json
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.dll
+D:\nhan\C#\Lab1Them_Bai3\bin\Debug\netcoreapp3.1\Lab1Them_bai3.pdb
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.csprojAssemblyReference.cache
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.AssemblyInfoInputs.cache
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.AssemblyInfo.cs
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.csproj.CoreCompileInputs.cache
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.dll
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.pdb
+D:\nhan\C#\Lab1Them_Bai3\obj\Debug\netcoreapp3.1\Lab1Them_bai3.genruntimeconfig.cache

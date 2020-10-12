@@ -1,0 +1,13 @@
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.exe
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.deps.json
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.runtimeconfig.json
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.runtimeconfig.dev.json
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.dll
+D:\nhan\C#\List_ArrayList\List_ArrayList\bin\Debug\netcoreapp3.1\List_ArrayList.pdb
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.csprojAssemblyReference.cache
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.AssemblyInfoInputs.cache
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.AssemblyInfo.cs
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.csproj.CoreCompileInputs.cache
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.dll
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.pdb
+D:\nhan\C#\List_ArrayList\List_ArrayList\obj\Debug\netcoreapp3.1\List_ArrayList.genruntimeconfig.cache

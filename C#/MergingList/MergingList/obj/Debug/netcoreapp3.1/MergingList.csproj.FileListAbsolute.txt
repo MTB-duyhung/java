@@ -1,0 +1,13 @@
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.exe
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.deps.json
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.runtimeconfig.json
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.runtimeconfig.dev.json
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.dll
+D:\nhan\C#\MergingList\MergingList\bin\Debug\netcoreapp3.1\MergingList.pdb
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.AssemblyInfoInputs.cache
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.AssemblyInfo.cs
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.csproj.CoreCompileInputs.cache
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.dll
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.pdb
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.genruntimeconfig.cache
+D:\nhan\C#\MergingList\MergingList\obj\Debug\netcoreapp3.1\MergingList.csprojAssemblyReference.cache
