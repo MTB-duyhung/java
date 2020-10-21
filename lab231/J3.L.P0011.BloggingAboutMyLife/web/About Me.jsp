@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0045)http://us-123my-life.simplesite.com/422328565 -->
 <html lang="en-US" class="">
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>About Me - us-123my-life.simplesite.com</title>
         <meta property="og:site_name" content="Blogging About My Life">
         <meta property="article:publisher" content="https://www.facebook.com/simplesite">
