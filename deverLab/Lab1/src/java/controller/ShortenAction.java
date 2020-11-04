@@ -55,15 +55,7 @@ public class ShortenAction extends ActionSupport {
     }
     URLDao udao = new URLDao();
     URL u = new URL();
-
-//    public void validate() {
-//        if (custom.length() != 0) {
-//            if (!u.custom(custom)) {
-//                addFieldError("custom", "This custom link is exist. Please use another.");
-//            }
-//        }
-//    }
-
+    
     public String execute() throws Exception {
 
         if (custom.length() != 0) {
